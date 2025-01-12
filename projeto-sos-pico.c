@@ -24,6 +24,26 @@ void enviar_traco() {
     sleep_ms(INTERVALO_GAP);
 }
 
+// Função para enviar o padrão SOS
+void enviar_sos() {
+    // Três pontos
+    for (int i = 0; i < 3; i++) {
+        enviar_ponto();
+    }
+    sleep_ms(INTERVALO_LETRA);
+
+    // Três traços
+    for (int i = 0; i < 3; i++) {
+        enviar_traco();
+    }
+    sleep_ms(INTERVALO_LETRA);
+
+    // Três pontos
+    for (int i = 0; i < 3; i++) {
+        enviar_ponto();
+    }
+    sleep_ms(INTERVALO_CICLO);
+}
 
 int main()
 {
