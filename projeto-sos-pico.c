@@ -45,12 +45,13 @@ void enviar_sos() {
     sleep_ms(INTERVALO_CICLO);
 }
 
-int main()
-{
-    stdio_init_all();
+int main() {
+    // Configuração do GPIO
+    gpio_init(PINO_LED);
+    gpio_set_dir(PINO_LED, GPIO_OUT);
 
+    // Loop infinito para enviar o sinal SOS continuamente
     while (true) {
-        printf("Hello, world!\n");
-        sleep_ms(1000);
+        enviar_sos();
     }
 }
