@@ -16,6 +16,15 @@ void enviar_ponto() {
     sleep_ms(INTERVALO_GAP);
 }
 
+// Função para enviar um traço
+void enviar_traco() {
+    gpio_put(PINO_LED, true);
+    sleep_ms(TEMPO_TRACO);
+    gpio_put(PINO_LED, false);
+    sleep_ms(INTERVALO_GAP);
+}
+
+
 int main()
 {
     stdio_init_all();
